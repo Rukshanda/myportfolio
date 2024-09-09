@@ -1,0 +1,847 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+   
+    --hover: #374151; 
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+a.hov {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.hov::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--hover);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+a.hov:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+ 
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.container .circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+@media (min-width:640px) {
+  .container .circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+  }
+}
+.container .circle::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: #222;
+  opacity: 0.8;
+}
+
+.container .circle::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #333;
+  border: 12px solid #4d4c51;
+  border-radius: 50%;
+  box-shadow: inset 0 5px 10px rgba(0,0,0,0.25),
+              0 10px 10px rgba(0,0,0,0.75),
+              -2px 2px rgba(255,255,255,0.5),
+              inset 0 4px 2px rgba(0,0,0,0.25),
+              inset 0 -2px 2px rgba(255,255,255,0.5);
+}
+
+@media (min-width:640px) {
+  .container .circle::after {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #333;
+    border: 12px solid #4d4c51;
+    border-radius: 50%;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.25),
+                0 10px 10px rgba(0,0,0,0.75),
+                -2px 2px rgba(255,255,255,0.5),
+                inset 0 4px 2px rgba(0,0,0,0.25),
+                inset 0 -2px 2px rgba(255,255,255,0.5);
+  }
+}
+
+.container .circle .number {
+  position: relative;
+  color: #fff;
+  z-index: 10;
+  line-height: 1em;
+  font-size: 2em;
+}
+
+.container .circle .number span {
+  font-size: 0.5em;
+  font-weight: 500;
+}
+
+.container .circle h4 {
+  position: relative;
+  color: #fff;
+  z-index: 10;
+  font-weight: 500;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  line-height: 0.6em;
+}
+
+
+/* Customize Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  color: rgb(255, 255, 255); /* Change arrow color to black */
+}
+
+/* Optional: Customize Swiper navigation button styles further */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1rem; /* Adjust size if needed */
+}
+
+
+
+
+
+ /* styles.css or a global CSS file */
+@layer utilities {
+    .text-stroke {
+      -webkit-text-stroke-width: 1.4px;
+      -webkit-text-stroke-color: black;
+    }
+  }
+
+  
+  /* Hexagon grid styles */
+
+:root {
+    --color-primary: #ee75d2;
+    --color-secondary:#000000;
+    --color-tertiary: #deee75;
+    --color-quaternary: #9375ee;
+    --color-surface: black;
+    --black: #1b1d22;
+    --node-js: #44883e;
+    --react-js: #66dbfb;
+    --js: #f7e025;
+    --css: #2d53e5;
+    --html: #e5532d;
+    --boostrap: #7c18f8;
+    --npm: #cd3e3d;
+    --bg: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-quaternary), black 70%),
+      var(--color-surface)
+    );
+    --color-on-surface: var(--color-primary);
+    --hover-filter: brightness(1.2);
+  }
+  @media (any-pointer: fine) {
+    :root {
+      --icon-filter: saturate(3.4) brightness(0.5) invert(1);
+      --ripple-filter: blur(1rem);
+    }
+  }
+  
+  .vision-ui {
+    --color-surface-container: rgba(255, 255, 255, 0.35);
+    --color-on-surface: white;
+    --hover-filter: brightness(1.5);
+  }
+  @media (any-pointer: fine) {
+    .vision-ui {
+      --icon-filter: saturate(0.4);
+      --ripple-filter: filter(0.2rem);
+    }
+  }
+  
+  @property --index {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: true;
+  }
+  @property --ripple-factor {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: true;
+  }
+  :root {
+    --hexagon-size: 8vmin;
+    --gap: 0.1vmin;
+  }
+  
+  .container {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+  .container .column {
+    margin: 0 -0.2vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .node-js {
+    color: var(--node-js);
+  }
+  .react-js {
+    color: var(--react-js);
+  }
+  .js {
+    color: var(--js);
+  }
+  .css {
+    color: var(--css);
+  }
+  .html {
+    color: var(--html);
+  }
+  .npm {
+    color: var(--npm);
+  }
+  
+  .boostrap {
+    color: var(--boostrap);
+  }
+  .hexagon {
+    --mix-percentage: calc(var(--column) * var(--index) * 3%);
+    width: 110px;
+    aspect-ratio: 1;
+    position: relative;
+    background: var(
+      --color-surface-container,
+      color-mix(
+        in srgb,
+        var(--color-secondary),
+        var(--color-primary) var(--mix-percentage)
+      )
+    );
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    -webkit-clip-path: polygon(
+      98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%
+    );
+    clip-path: polygon(
+      98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%
+    );
+    cursor: pointer;
+  }
+  @media (min-width: 640px) {
+    .hexagon {
+      --mix-percentage: calc(var(--column) * var(--index) * 3%);
+      width: 140px;
+      aspect-ratio: 1;
+      position: relative;
+      background: var(
+        --color-surface-container,
+        color-mix(
+          in srgb,
+          var(--color-secondary),
+          var(--color-primary) var(--mix-percentage)
+        )
+      );
+      -webkit-backdrop-filter: blur(1rem);
+      backdrop-filter: blur(1rem);
+      -webkit-clip-path: polygon(
+        98.66024% 45%,
+        99.39693% 46.5798%,
+        99.84808% 48.26352%,
+        100% 50%,
+        99.84808% 51.73648%,
+        99.39693% 53.4202%,
+        98.66025% 55%,
+        78.66025% 89.64102%,
+        77.66044% 91.06889%,
+        76.42788% 92.30146%,
+        75% 93.30127%,
+        73.4202% 94.03794%,
+        71.73648% 94.48909%,
+        70% 94.64102%,
+        30% 94.64102%,
+        28.26352% 94.48909%,
+        26.5798% 94.03794%,
+        25% 93.30127%,
+        23.57212% 92.30146%,
+        22.33956% 91.06889%,
+        21.33975% 89.64102%,
+        1.33975% 55%,
+        0.60307% 53.4202%,
+        0.15192% 51.73648%,
+        0% 50%,
+        0.15192% 48.26352%,
+        0.60307% 46.5798%,
+        1.33975% 45%,
+        21.33975% 10.35898%,
+        22.33956% 8.93111%,
+        23.57212% 7.69854%,
+        25% 6.69873%,
+        26.5798% 5.96206%,
+        28.26352% 5.51091%,
+        30% 5.35898%,
+        70% 5.35898%,
+        71.73648% 5.51091%,
+        73.4202% 5.96206%,
+        75% 6.69873%,
+        76.42788% 7.69854%,
+        77.66044% 8.93111%,
+        78.66025% 10.35898%
+      );
+      clip-path: polygon(
+        98.66024% 45%,
+        99.39693% 46.5798%,
+        99.84808% 48.26352%,
+        100% 50%,
+        99.84808% 51.73648%,
+        99.39693% 53.4202%,
+        98.66025% 55%,
+        78.66025% 89.64102%,
+        77.66044% 91.06889%,
+        76.42788% 92.30146%,
+        75% 93.30127%,
+        73.4202% 94.03794%,
+        71.73648% 94.48909%,
+        70% 94.64102%,
+        30% 94.64102%,
+        28.26352% 94.48909%,
+        26.5798% 94.03794%,
+        25% 93.30127%,
+        23.57212% 92.30146%,
+        22.33956% 91.06889%,
+        21.33975% 89.64102%,
+        1.33975% 55%,
+        0.60307% 53.4202%,
+        0.15192% 51.73648%,
+        0% 50%,
+        0.15192% 48.26352%,
+        0.60307% 46.5798%,
+        1.33975% 45%,
+        21.33975% 10.35898%,
+        22.33956% 8.93111%,
+        23.57212% 7.69854%,
+        25% 6.69873%,
+        26.5798% 5.96206%,
+        28.26352% 5.51091%,
+        30% 5.35898%,
+        70% 5.35898%,
+        71.73648% 5.51091%,
+        73.4202% 5.96206%,
+        75% 6.69873%,
+        76.42788% 7.69854%,
+        77.66044% 8.93111%,
+        78.66025% 10.35898%
+      );
+      cursor: pointer;
+    }
+  }
+  @media (hover) {
+    .hexagon:hover {
+      background-color: rgb(229, 226, 226);
+      cursor: default;
+      --duration: 0.45s;
+      -webkit-animation: ripple var(--duration) ease-in-out;
+      animation: ripple var(--duration) ease-in-out;
+      -webkit-animation-duration: max(
+        var(--duration),
+        calc(var(--duration) * var(--ripple-factor) / 100)
+      );
+      animation-duration: max(
+        var(--duration),
+        calc(var(--duration) * var(--ripple-factor) / 100)
+      );
+      -webkit-animation-delay: calc(var(--ripple-factor) * 8ms);
+      animation-delay: calc(var(--ripple-factor) * 8ms);
+    }
+  }
+  .hexagon:after {
+    content: var(--icon);
+    display: grid;
+    place-items: center;
+    position: absolute;
+    filter: var(--icon-filter);
+    font-size: 2.5vmin;
+    inset: 0;
+  }
+  
+  @-webkit-keyframes ripple {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(max(0.8, calc(var(--ripple-factor) / 100)));
+      opacity: 0.42;
+    }
+    65% {
+      opacity: 1;
+    }
+    70% {
+      transform: scale(1.5);
+      filter: var(--ripple-filter);
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes ripple {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(max(0.8, calc(var(--ripple-factor) / 100)));
+      opacity: 0.42;
+    }
+    65% {
+      opacity: 1;
+    }
+    70% {
+      transform: scale(1.5);
+      filter: var(--ripple-filter);
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .container.show-ripple {
+    pointer-events: none;
+  }
+  .container.show-ripple .hexagon {
+    cursor: default;
+    --duration: 0.45s;
+    -webkit-animation: ripple var(--duration) ease-in-out;
+    animation: ripple var(--duration) ease-in-out;
+    -webkit-animation-duration: max(
+      var(--duration),
+      calc(var(--duration) * var(--ripple-factor) / 100)
+    );
+    animation-duration: max(
+      var(--duration),
+      calc(var(--duration) * var(--ripple-factor) / 100)
+    );
+    -webkit-animation-delay: calc(var(--ripple-factor) * 8ms);
+    animation-delay: calc(var(--ripple-factor) * 8ms);
+  }
+  
+  .switch {
+    --mix-percentage: calc(var(--column) * var(--index) * 3%);
+    width: var(--hexagon-size);
+    aspect-ratio: 1;
+    position: relative;
+    background: var(
+      --color-surface-container,
+      color-mix(
+        in srgb,
+        var(--color-secondary),
+        var(--color-primary) var(--mix-percentage)
+      )
+    );
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    -webkit-clip-path: polygon(
+      98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%
+    );
+    clip-path: polygon(
+      98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%
+    );
+    cursor: pointer;
+    --index: 6;
+    --column: 2;
+    position: absolute;
+    display: flex;
+    top: 4vmin;
+    right: 4vmin;
+    width: 8vmin;
+    height: 4vmin;
+    cursor: pointer;
+    font-size: 2vmin;
+  }
+  .switch:after {
+    --mix-percentage: calc(var(--column) * var(--index) * 3%);
+    width: var(--hexagon-size);
+    aspect-ratio: 1;
+    position: relative;
+    background: var(
+      --color-surface-container,
+      color-mix(
+        in srgb,
+        var(--color-secondary),
+        var(--color-primary) var(--mix-percentage)
+      )
+    );
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    -webkit-clip-path: polygon(
+      98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%
+    );
+    clip-path: polygon(
+      98.66024% 45%,
+      99.39693% 46.5798%,
+      99.84808% 48.26352%,
+      100% 50%,
+      99.84808% 51.73648%,
+      99.39693% 53.4202%,
+      98.66025% 55%,
+      78.66025% 89.64102%,
+      77.66044% 91.06889%,
+      76.42788% 92.30146%,
+      75% 93.30127%,
+      73.4202% 94.03794%,
+      71.73648% 94.48909%,
+      70% 94.64102%,
+      30% 94.64102%,
+      28.26352% 94.48909%,
+      26.5798% 94.03794%,
+      25% 93.30127%,
+      23.57212% 92.30146%,
+      22.33956% 91.06889%,
+      21.33975% 89.64102%,
+      1.33975% 55%,
+      0.60307% 53.4202%,
+      0.15192% 51.73648%,
+      0% 50%,
+      0.15192% 48.26352%,
+      0.60307% 46.5798%,
+      1.33975% 45%,
+      21.33975% 10.35898%,
+      22.33956% 8.93111%,
+      23.57212% 7.69854%,
+      25% 6.69873%,
+      26.5798% 5.96206%,
+      28.26352% 5.51091%,
+      30% 5.35898%,
+      70% 5.35898%,
+      71.73648% 5.51091%,
+      73.4202% 5.96206%,
+      75% 6.69873%,
+      76.42788% 7.69854%,
+      77.66044% 8.93111%,
+      78.66025% 10.35898%
+    );
+    display: grid;
+    place-items: center;
+    --index: 6;
+    --column: 4;
+    content: "👾";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 4vmin;
+    width: 6vmin;
+    transition: transform 0.3s ease;
+  }
+  .switch.checked:after {
+    transform: translateX(2vmin);
+    content: "🕶️";
+  }
+  
+  
+  .hexBody:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    filter: blur(0.5rem);
+    transition: opacity 0.6s ease-in-out, filter 0.6s ease-in-out;
+  }
+  
+  .vision-ui body:before {
+    opacity: 1;
+    filter: blur(0);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  a.labs-follow-me {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0.5vh;
+    top: unset;
+    text-align: center;
+  }
+  a.labs-follow-me svg {
+    width: 10vmin;
+  }
+  
+  .iconStyles {
+    font-size: 3.5rem;
+  }
+  
+  .hexagon span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
