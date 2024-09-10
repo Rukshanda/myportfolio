@@ -24,6 +24,14 @@ export const project2 = project2Img
 import project3Img from "/assets/project-3.svg"
 export const project3 = project3Img
 
+import project4Img from "/assets/project-4.svg"
+export const project4 = project4Img
+
+import project5Img from "/assets/project-5.svg"
+export const project5 = project5Img
+
+import project6Img from "/assets/project-6.svg"
+export const project6 = project6Img
 
 import readmoreImg from "/assets/readmore.svg"
 export const readmore = readmoreImg

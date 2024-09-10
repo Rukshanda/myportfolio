@@ -41,8 +41,7 @@ a.hov:hover::before {
     transform-origin: bottom left;
 }
 
- 
-.container {
+.circlecontainer {
   position: relative;
   display: flex;
   justify-content: center;
@@ -51,7 +50,7 @@ a.hov:hover::before {
   flex-wrap: wrap;
 }
 
-.container .circle {
+.circlecontainer .circle {
   position: relative;
   display: flex;
   justify-content: center;
@@ -63,7 +62,7 @@ a.hov:hover::before {
   box-sizing: border-box; /* Ensure padding and border are included in width/height */
 }
 @media (min-width:640px) {
-  .container .circle {
+  .circlecontainer .circle {
     position: relative;
     display: flex;
     justify-content: center;
@@ -75,7 +74,7 @@ a.hov:hover::before {
     box-sizing: border-box; /* Ensure padding and border are included in width/height */
   }
 }
-.container .circle::before {
+.circlecontainer .circle::before {
   content: '';
   position: absolute;
   inset: 5px;
@@ -84,7 +83,7 @@ a.hov:hover::before {
   opacity: 0.8;
 }
 
-.container .circle::after {
+.circlecontainer .circle::after {
   content: '';
   position: absolute;
   width: 100px;
@@ -100,7 +99,7 @@ a.hov:hover::before {
 }
 
 @media (min-width:640px) {
-  .container .circle::after {
+  .circlecontainer .circle::after {
     content: '';
     position: absolute;
     width: 180px;
@@ -116,7 +115,7 @@ a.hov:hover::before {
   }
 }
 
-.container .circle .number {
+.circlecontainer .circle .number {
   position: relative;
   color: #fff;
   z-index: 10;
@@ -124,12 +123,12 @@ a.hov:hover::before {
   font-size: 2em;
 }
 
-.container .circle .number span {
+.circlecontainer .circle .number span {
   font-size: 0.5em;
   font-weight: 500;
 }
 
-.container .circle h4 {
+.circlecontainer .circle h4 {
   position: relative;
   color: #fff;
   z-index: 10;
@@ -139,6 +138,9 @@ a.hov:hover::before {
   line-height: 0.6em;
 }
 
+
+
+ 
 
 /* Customize Swiper navigation arrows */
 .swiper-button-next,

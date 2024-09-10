@@ -1,27 +1,23 @@
 import React from 'react';
 import { FaCss3Alt, FaGitAlt, FaGithubAlt, FaHtml5, FaJs, FaReact } from 'react-icons/fa6';
-import { RiTailwindCssFill } from 'react-icons/ri';
-import { SiRedux, SiStyledcomponents, SiTailwindcss  } from 'react-icons/si';
- 
-import { Autoplay, Navigation , EffectCoverflow } from 'swiper/modules';
-import { SwiperSlide , Swiper} from 'swiper/react';
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+ import { SiRedux, SiStyledcomponents, SiTailwindcss  } from 'react-icons/si';
+ import { Marquee } from '@devnomic/marquee';
+import "@devnomic/marquee/dist/index.css";  
 
 export default function Skills() {
-  const skillsIcons = [
+  // Split the skills into two arrays
+  const skillsIcons1 = [
     { icon: <FaJs />, name: 'JavaScript' },
     { icon: <FaHtml5 />, name: 'HTML' },
     { icon: <FaCss3Alt />, name: 'CSS' },
-    { icon: <FaReact />, name: 'React' },
+    { icon: <FaReact />, name: 'React' }
+  ];
+
+  const skillsIcons2 = [
     { icon: <FaGitAlt />, name: 'Git' },
     { icon: <SiTailwindcss />, name: 'Tailwind' },
     { icon: <SiRedux />, name: 'Redux Toolkit' },
-    { icon: <SiStyledcomponents />, name: 'Styled Components' },
+    { icon: <SiStyledcomponents />, name: 'Styled Components' }
   ];
 
   return (
@@ -31,45 +27,33 @@ export default function Skills() {
           <h1 className="sm:text-[2.5rem] text-[2.2rem] text-center pb-[60px]">
             My <span className="font-extrabold">Skills</span>
           </h1>
-          <Swiper
-                modules={[Navigation , Autoplay ]}
-                spaceBetween={60}
-             
-                speed={1200}
-                autoplay={{
-                  delay: 500,  
-                 }}
-                loop={true}
-                breakpoints={{
-                    1280: {
-                    slidesPerView: 5,
-                  },   1024: {
-                    slidesPerView: 4,
-                  },
-                  768: {
-                    slidesPerView: 3,
-                  },
-                  450: {
-                    slidesPerView: 2,
-                  },
-                  0: {
-                    slidesPerView: 1,
-                  },
-                }}
-        >
-                  <div className="swiper-slide grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-[50px] mt-[20px]">
-
-                
-           
-              {skillsIcons.map((skill, index) => (
-                <SwiperSlide key={index} className="flex flex-col w-[200px] h-[200px] items-center rounded-[8px] gap-[34px] text-[1.2rem] p-[24px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-400 ease-in-out cursor-pointer">
-                  <span className="text-[4rem]">{skill.icon}</span>
-                  <span className='font-bold  text-center'>{skill.name}</span>
-                </SwiperSlide>
+        
+          {/* First Marquee */}
+          <div className='py-[10px]'>
+          <Marquee fade={true} pauseOnHover={true}  className="gap-[3rem] [--duration:15s]" innerClassName="gap-[3rem] [--gap:3rem]">
+               {skillsIcons1.map((skill, index) => (
+                <div key={index} className="flex flex-row md:w-[300px] md:h-[100px] w-[250px] h-[80px] items-center rounded-[8px] md:gap-[34px] gap-[25px] text-[1.2rem] p-[24px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-400 ease-in-out cursor-pointer">
+                  <span className="md:text-[4rem] text-[3.5rem]">{skill.icon}</span>
+                  <span className='font-bold text-center md:text-[1.2rem] text-[1.1rem]'>{skill.name}</span>
+                </div>
               ))}
-            
-            </div>
-           </Swiper>
+           </Marquee>
+          </div>
+        
+          
+          <div className='py-[10px]'>
+    <Marquee fade={true} pauseOnHover={true} reverse={true}
+          className="gap-[3rem] [--duration:15s]" innerClassName="gap-[3rem] [--gap:3rem]">
+          
+               {skillsIcons2.map((skill, index) => (
+                   <div key={index} className="flex flex-row md:w-[300px] md:h-[100px] w-[250px] h-[80px] items-center rounded-[8px] md:gap-[34px] gap-[25px] text-[1.2rem] p-[24px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-400 ease-in-out cursor-pointer">
+                   <span className="md:text-[4rem] text-[3.5rem]">{skill.icon}</span>
+                   <span className='font-bold text-center md:text-[1.2rem] text-[1.1rem]'>{skill.name}</span>
+                 </div>
+              ))}
+           </Marquee>
+          </div>
+        
         </div>
       </div>
     </div>

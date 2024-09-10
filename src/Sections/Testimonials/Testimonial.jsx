@@ -40,7 +40,7 @@ export default function Testimonial() {
           spaceBetween={60}
           className='md:p-[50px] py-[20px]'
           speed={1200}
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 2000 }}
           
           loop={true}
           breakpoints={{

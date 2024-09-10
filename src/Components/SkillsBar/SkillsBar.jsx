@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+ 
 
 const ProgressCircles = () => {
   const circlesRef = useRef([]);
@@ -33,7 +34,7 @@ const ProgressCircles = () => {
               My <span className="font-extrabold">Skills</span>
             </h1>
           <div className='flex justify-center'>
-          <div className="container">
+          <div className="circlecontainer">
       <div
         className="circle"
         data-degree="99"
