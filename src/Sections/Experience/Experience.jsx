@@ -26,7 +26,7 @@ export default function Experience() {
 
   return (
     <div className='bg-black mt-[80px]'>
-      <div className='max-w-[1440px] mx-auto z-[1000] '>
+      <div className='max-w-[1440px] mx-auto'>
         <div className='py-[80px] lg:px-[80px] sm:px-[20px] px-[20px]'>
           <div className="myExperience">
             <h1 className="sm:text-[2.5rem] text-[2.2rem] text-white text-center pb-[60px]">

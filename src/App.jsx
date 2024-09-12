@@ -5,6 +5,9 @@ import Footer from "./Components/Footer/Footer";
 import About from "./Pages/About/About";
  
 import Home from "./Pages/Home/Home"; // Assuming you have a Home page
+import ProjectsPage from './Pages/ProjectsPage/ProjectsPage';
+import Blogspage from './Pages/BlogsPage/Blogspage';
+import ContactPage from './Pages/ContactPage/ContactPage';
 
 function App() {
   return (
@@ -13,6 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/blogs" element={<Blogspage />} />
+        <Route path="/contact" element={<ContactPage />} />
+
         {/* <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blogs" element={<Blogs />} />

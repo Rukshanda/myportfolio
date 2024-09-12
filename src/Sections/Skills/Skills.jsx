@@ -22,7 +22,7 @@ export default function Skills() {
 
   return (
     <div className="max-w-[1440px] mx-auto">
-      <div className="py-[80px] lg:px-[80px] px-[40px]">
+      <div className="py-[80px] lg:px-[80px] px-[20px]">
         <div className="myskills px-[20px]">
           <h1 className="sm:text-[2.5rem] text-[2.2rem] text-center pb-[60px]">
             My <span className="font-extrabold">Skills</span>

@@ -197,7 +197,7 @@ a.hov:hover::before {
   }
   @media (any-pointer: fine) {
     :root {
-      --icon-filter: saturate(3.4) brightness(0.5) invert(1);
+      --icon-filter: brightness(0) saturate(100%);
       --ripple-filter: blur(1rem);
     }
   }

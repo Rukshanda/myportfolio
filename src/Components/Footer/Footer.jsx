@@ -1,15 +1,31 @@
 import React from 'react';
 import { logofooter } from '../../utils';
 import { FaXTwitter, FaMedium, FaDiscord, FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Footer() {
     const socialIcons = [
-        { icon: FaFacebookF },
-        { icon: FaInstagram },
-        { icon: FaXTwitter },
-        { icon: FaDiscord },
-        { icon: FaMedium },
-        { icon: FaLinkedin },
+        { 
+            icon: FaInstagram,
+            url: 'https://www.instagram.com/rukshandamahmood/'
+        },
+        { 
+            icon: FaXTwitter,
+            url: 'https://x.com/rukshanda10'
+        },
+      
+        { 
+            icon: FaMedium,
+            url: 'https://medium.com/@rukshandanadir'
+        },
+        { 
+            icon: FaLinkedin,
+            url: 'https://www.linkedin.com/in/rukshanda-mahmood-27bba6239/'
+        },
+        { 
+            icon: FaGithub,
+            url: 'https://github.com/Rukshanda/'
+        },
     ];
 
     return (
@@ -18,13 +34,15 @@ export default function Footer() {
                 <div className='py-[25px] px-[80px]'>
                     <div className="footer md:flex-row flex-col flex justify-between items-center gap-[20px]">
                         <div className="img">
-                            <img src={logofooter} alt="" />
+                            <img src={logofooter} alt="Footer Logo" />
                         </div>
                         <div className="social-icons">
                             <ul className='flex gap-[20px]'>
                                 {socialIcons.map((item, index) => (
-                                    <li key={index} className='text-black md:text-[1.4rem] text-[1.1rem] bg-white p-[6px] rounded-[50px]'>
-                                        <item.icon />
+                                    <li key={index} className='text-black md:text-[1.4rem] text-[1.1rem] bg-white p-[6px] rounded-[50px] '>
+                                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                            <item.icon />
+                                        </a>
                                     </li>
                                 ))}
                             </ul>

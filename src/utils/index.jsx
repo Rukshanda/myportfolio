@@ -45,3 +45,15 @@ export const person2 = person2Img;
 
 import logo2Img from "/assets/logo2.svg"
 export const logofooter = logo2Img
+
+import blog1Img from "/assets/blog-1.jpg"
+export const blog1 = blog1Img
+
+import blog2Img from "/assets/blog-2.jpg"
+export const blog2 = blog2Img
+
+import blog3Img from "/assets/blog-3.jpg"
+export const blog3 = blog3Img
+
+import blog4Img from "/assets/blog-4.webp"
+export const blog4 = blog4Img
