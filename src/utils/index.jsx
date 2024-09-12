@@ -12,25 +12,25 @@ export const banner = bannerImg
 import aboutImg from "/assets/about.svg"
 export const about = aboutImg
 
-import project1Img from "/assets/project-1.svg"
+import project1Img from "/assets/project-1.png"
 export const project1 = project1Img
 
 
-import project2Img from "/assets/project-2.svg"
+import project2Img from "/assets/project-2.jpg"
 export const project2 = project2Img
 
 
 
-import project3Img from "/assets/project-3.svg"
+import project3Img from "/assets/project-3.jpg"
 export const project3 = project3Img
 
-import project4Img from "/assets/project-4.svg"
+import project4Img from "/assets/project-4.jpg"
 export const project4 = project4Img
 
-import project5Img from "/assets/project-5.svg"
+import project5Img from "/assets/project-5.jpg"
 export const project5 = project5Img
 
-import project6Img from "/assets/project-6.svg"
+import project6Img from "/assets/project-6.jpg"
 export const project6 = project6Img
 
 import readmoreImg from "/assets/readmore.svg"
