@@ -19,9 +19,9 @@ export default function AboutMe() {
 
           I’m a passionate and hardworking front-end developer with three years of experience, specializing in building responsive and creative websites using HTML, CSS, JavaScript, and React.js.  
           <br /> <br />
-           I have hands-on experience with Bootstrap, Tailwind, and Redux Toolkit, and I excel at creating functional sites, including e-commerce platforms. Balancing coding with my studies was challenging, but I took it as a challange and kept going on a journey of becoming a web devloper.
+           I have hands-on experience with Bootstrap, Tailwind, and Redux Toolkit, and I excel at creating functional sites, including e-commerce platforms. <br /> <br />  Balancing coding with my studies was challenging, but I took it as a challange and kept going on a journey of becoming a web devloper.
            <br /> <br />
-            I believe in deleviring high quality work and  take pride in putting my clients first, ensuring their satisfaction with every project. I am open to learning new technologies and improving my skills. Additionally, I write articles on Medium to inspire and support others in the web development community.
+            I believe in deleviring high quality work and  take pride in putting my clients first, ensuring their satisfaction with every project.
           </p>
              </div>
            </div>

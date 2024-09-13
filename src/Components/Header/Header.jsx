@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'; // Import NavLink
-import { FaTimes, FaUserPlus } from 'react-icons/fa';
-import { FaBarsStaggered } from 'react-icons/fa6';
+import { FaRegUser, FaTimes, FaUserPlus ,   } from 'react-icons/fa';
+import { FaBarsStaggered, FaPerson } from 'react-icons/fa6';
 import { bar, logo } from '../../utils'; // Ensure correct paths
 
 export default function Header() {
@@ -42,9 +42,9 @@ export default function Header() {
 
           <div className="hidden md:!block">
             <button className="flex items-center gap-[10px] bg-black px-[20px] py-[10px] text-white rounded-[8px] hover:bg-white border hover:border-black hover:text-black transition-colors duration-400 ease-in-out">
-              <span>Connect</span>
+              <span>Resume</span>
               <span>
-                <FaUserPlus />
+                <FaRegUser />
               </span>
             </button>
           </div>

@@ -12,6 +12,7 @@
   "dependencies": {
     "@devnomic/marquee": "^1.0.2",
     "@fortawesome/fontawesome-free": "^6.6.0",
+    "@tabler/icons-react": "^3.16.0",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.5.4",

@@ -1,99 +1,83 @@
-"use client";
 import React from "react";
-import { LayoutGrid } from "../../Components/ui/card";
-import { blog1, blog2, blog3, blog4 } from "../../utils";
+import { BentoGrid, BentoGridItem } from "../../Components/ui/bentogrid";
+import { blog1, blog2, blog3, blog4, blog5 } from "../../utils";
 
-export default function Blogs() {
+export default function BentoGridDemo() {
   return (
-    (<div className="h-screen w-full">
-      <LayoutGrid cards={cards} />
-    </div>)
+    <BentoGrid className="max-w-6xl mx-auto">
+      {items.map((item, i) => (
+        <BentoGridItem
+          key={i}
+          title={item.title}
+          description={
+            <div>
+              <p>{item.description}</p>
+              <ReadMoreLink url={item.url} /> {/* Adding link inside description */}
+            </div>
+          }
+          header={<Skeleton image={item.image} />}
+          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+        />
+      ))}
+    </BentoGrid>
   );
 }
 
-const SkeletonOne = () => {
-  return (
-    (<div >
-      <p className="font-bold md:text-4xl text-xl text-white">
-      5 Coding Mistakes I wish I knew When I Started Coding
-            </p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-      Well, coding can be a rollercoaster. One minute the code is working like a charm, and the next moment, you’re staring at a screen with red errors.....
-      </p>
-      <a href="https://medium.com/@rukshandanadir/things-i-wish-i-knew-when-i-started-coding-54f8b042aa23" className="text-white font-bold hover:text-zinc-300">Read more</a>
-    </div>)
-  );
-};
+// Updated Skeleton component to accept an image prop
+const Skeleton = ({ image }) => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
+    {image ? (
+      <img
+        src={image}
+        alt="Item Image"
+        className="w-full h-full object-cover rounded-xl"
+      />
+    ) : null}
+  </div>
+);
 
-const SkeletonTwo = () => {
-  return (
-    (<div>
-      <p className="font-bold md:text-4xl text-xl text-white">
-      7 HTML Tags you didn’t know existed!
-            </p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-      HTML is an essential markup language for creating a website. It’s the basic structure of the webpage. Additionally, it’s easy to learn and it has a lot of valuable........
-      </p>
-      <a href="https://medium.com/@rukshandanadir/7-html-tags-you-didnt-know-existed-21812c9cc8d5" className="text-white font-bold hover:text-zinc-300">Read more</a>
+// "Read More" Link Component
+const ReadMoreLink = ({ url }) => (
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-zinc-200 hover:underline mt-2 block font-bold underline"
+  >
+    Read More
+  </a>
+);
 
-    </div>)
-  );
-};
-const SkeletonThree = () => {
-  return (
-    (<div>
-      <p className="font-bold md:text-4xl text-xl text-white">
-      5 HTML Tags You Might Know For The First Time
-      </p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-      Hello there! you must have enjoyed reading my previous blog on HTML tags. This time, I bring you another 5 underrated HTML tags you wish.......
-      </p>
-      <a href="https://medium.com/@rukshandanadir/5-unpopular-html-tags-you-might-know-for-the-first-time-1f792544617a" className="text-white font-bold hover:text-zinc-300">Read more</a>
-
-    </div>)
-  );
-};
-const SkeletonFour = () => {
-  return (
-    (<div>
-      <p className="font-bold md:text-4xl text-xl text-black">
-        Comming Soon
-      </p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-   
-      </p>
- 
-    </div>)
-  );
-};
-
-const cards = [
+// Updated items array to include image URLs and article URLs
+const items = [
   {
-    id: 1,
-    content: <SkeletonOne />,
-    className: "md:col-span-2",
-    thumbnail: blog1,
+    title: "5 Coding Mistakes I Wish I Knew When I Started Coding",
+    description: "Learn the most common mistakes made while coding.",
+    image: blog1,
+    url: "https://medium.com/@rukshandanadir/things-i-wish-i-knew-when-i-started-coding-54f8b042aa23/",
   },
   {
-    id: 2,
-    content: <SkeletonTwo />,
-    className: "col-span-1",
-    thumbnail:blog2,
+    title: "7 HTML Tags You Didn’t Know Existed!",
+    description: "Explore lesser-known HTML tags.",
+    image: blog2,
+    url: "https://medium.com/@rukshandanadir/7-html-tags-you-didnt-know-existed-21812c9cc8d5",
   },
   {
-    id: 3,
-    content: <SkeletonThree />,
-    className: "col-span-1",
-    thumbnail: blog3,
+    title: "5 HTML Tags You Might Know For The First Time",
+    description: "HTML tags that aren't often talked about.",
+    image: blog3,
+    url: "https://medium.com/@rukshandanadir/5-unpopular-html-tags-you-might-know-for-the-first-time-1f792544617a",
   },
   {
-    id: 4,
-    content: <SkeletonFour />,
-    className: "md:col-span-2",
-    thumbnail: blog4, 
-   },
+    title: "Best 5 JavaScript Frameworks",
+    description: "Top frameworks you need to know for JS development.",
+    image: blog4,
+    url: "#",
+  },
+  {
+    title: "Top 5 Programming Languages in the Next 5 Years",
+    description: "Which languages are trending in tech?",
+    image: blog5,
+    url: "#",
+  },
 ];

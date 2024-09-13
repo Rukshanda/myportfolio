@@ -12,7 +12,7 @@ export const banner = bannerImg
 import aboutImg from "/assets/about.svg"
 export const about = aboutImg
 
-import project1Img from "/assets/project-1.png"
+import project1Img from "/assets/project-1.jpg"
 export const project1 = project1Img
 
 
@@ -57,3 +57,8 @@ export const blog3 = blog3Img
 
 import blog4Img from "/assets/blog-4.webp"
 export const blog4 = blog4Img
+
+
+
+import blog5Img from "/assets/blog-5.jpg"
+export const blog5 = blog5Img

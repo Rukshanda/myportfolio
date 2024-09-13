@@ -32,8 +32,8 @@ export default function Skills() {
           <div className='py-[10px]'>
           <Marquee fade={true} pauseOnHover={true}  className="gap-[3rem] [--duration:15s]" innerClassName="gap-[3rem] [--gap:3rem]">
                {skillsIcons1.map((skill, index) => (
-                <div key={index} className="flex flex-row md:w-[300px] md:h-[100px] w-[250px] h-[80px] items-center rounded-[8px] md:gap-[34px] gap-[25px] text-[1.2rem] p-[24px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-400 ease-in-out cursor-pointer">
-                  <span className="md:text-[4rem] text-[3.5rem]">{skill.icon}</span>
+                <div key={index} className="flex flex-row md:w-[250px] md:h-[80px] w-[200px] h-[60px] items-center rounded-[8px] md:gap-[34px] gap-[25px] text-[1.2rem] p-[12px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-400 ease-in-out cursor-pointer">
+                  <span className="md:text-[3rem] text-[2.5rem]">{skill.icon}</span>
                   <span className='font-bold text-center md:text-[1.2rem] text-[1.1rem]'>{skill.name}</span>
                 </div>
               ))}
@@ -46,8 +46,8 @@ export default function Skills() {
           className="gap-[3rem] [--duration:15s]" innerClassName="gap-[3rem] [--gap:3rem]">
           
                {skillsIcons2.map((skill, index) => (
-                   <div key={index} className="flex flex-row md:w-[300px] md:h-[100px] w-[250px] h-[80px] items-center rounded-[8px] md:gap-[34px] gap-[25px] text-[1.2rem] p-[24px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-400 ease-in-out cursor-pointer">
-                   <span className="md:text-[4rem] text-[3.5rem]">{skill.icon}</span>
+                   <div key={index} className="flex flex-row md:w-[250px] md:h-[80px] w-[200px] h-[60px] items-center rounded-[8px] md:gap-[34px] gap-[25px] text-[1.2rem] p-[12px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-400 ease-in-out cursor-pointer">
+                   <span className="md:text-[3rem] text-[2.5rem]">{skill.icon}</span>
                    <span className='font-bold text-center md:text-[1.2rem] text-[1.1rem]'>{skill.name}</span>
                  </div>
               ))}
