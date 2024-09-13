@@ -4,6 +4,10 @@ import { blog1, blog2, blog3, blog4, blog5 } from "../../utils";
 
 export default function BentoGridDemo() {
   return (
+    <div className="py-20">
+ <h1 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center pb-[60px]">
+    My <span className="font-extrabold"> Blogs</span>
+   </h1>
     <BentoGrid className="max-w-6xl mx-auto">
       {items.map((item, i) => (
         <BentoGridItem
@@ -20,6 +24,8 @@ export default function BentoGridDemo() {
         />
       ))}
     </BentoGrid>
+    </div>
+   
   );
 }
 

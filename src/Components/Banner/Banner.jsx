@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaXTwitter, FaMedium, FaDiscord, FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa6';
+import { FaXTwitter, FaMedium, FaDiscord, FaFacebookF, FaInstagram, FaLinkedin, FaRegUser, FaUserPlus } from 'react-icons/fa6';
 import { banner } from '../../utils';
+import CopyEmailButton from "../CopyButton/CopyButton"
 import Hexagon from '../Hexagon/Hexagon';
 
 const socialIcons = [
@@ -15,6 +16,7 @@ const socialIcons = [
 ]
 
 export default function Banner() {
+const email = "contactrukshanda12@gmail.com"
   return (
     <div className="max-w-[1440px] mx-auto">
       <div className="py-[60px] lg:px-[80px] sm:px-[20px] px-[10px] flex justify-between items-center">
@@ -31,8 +33,22 @@ export default function Banner() {
               I build dynamic, responsive websites with clean, readable code using React, JavaScript, HTML, CSS, Tailwind, Bootstrap, and Redux Toolkit.
               </p>
 
-              <div>
-                
+              <div className='flex xl:flex-row lg:flex-col sm:flex-row flex-col gap-[20px]'>
+              <CopyEmailButton email={email} />
+              <a href="https://www.linkedin.com/in/rukshanda-mahmood-27bba6239/" target='blank' className='   xl:w-[40%]
+       lg:w-[100%]
+       sm:w-[40%]
+       w-[100%]
+       '>
+              <button className="w-full justify-center  flex items-center gap-[10px] bg-black px-[20px] py-[10px] text-white rounded-[8px] hover:bg-white border-black  hover:border-black border-[2px] hover:text-black transition-colors duration-400 ease-in-out">
+              <span>Connect</span>
+              <span>
+                <FaUserPlus />
+              </span>
+            </button>
+              </a>
+         
+
               </div>
 
             </div>

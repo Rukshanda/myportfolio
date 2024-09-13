@@ -41,8 +41,8 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:!block">
-            <button className="flex items-center gap-[10px] bg-black px-[20px] py-[10px] text-white rounded-[8px] hover:bg-white border hover:border-black hover:text-black transition-colors duration-400 ease-in-out">
-              <span>Resume</span>
+          <button className=" flex items-center gap-[10px] bg-black px-[20px] py-[10px] text-white rounded-[8px] hover:bg-white border-black  hover:border-black border-[2px] hover:text-black transition-colors duration-400 ease-in-out">
+          <span>Resume</span>
               <span>
                 <FaRegUser />
               </span>

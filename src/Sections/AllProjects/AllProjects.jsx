@@ -62,9 +62,9 @@ export default function AllProjects() {
     <div className="max-w-[1440px] mx-auto">
       <div className="py-20 lg:px-20 sm:px-5 px-5">
         <div className="allprojects">
-          <h1 className="sm:text-5xl text-4xl text-black text-center pb-15">
-            All <span className="font-extrabold">Projects</span>
-          </h1>
+        <h1 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center">
+    All <span className="font-extrabold"> Projects</span>
+   </h1>
           <div className='py-[80px]'>
           <div className="allprojects-cards grid md:grid-cols-2 sm:grid-cols-1 gap-10">
             {projects.map((project, index) => (
