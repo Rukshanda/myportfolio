@@ -34,7 +34,7 @@ export default function Footer() {
                 <div className='py-[25px] px-[80px]'>
                     <div className="footer md:flex-row flex-col flex justify-between items-center gap-[20px]">
                         <div className="img">
-                            <img src={logofooter} alt="Footer Logo" />
+                            <img src={logofooter} alt="Footer Logo" className='max-w-[180px]' />
                         </div>
                         <div className="social-icons">
                             <ul className='flex gap-[20px]'>

@@ -43,7 +43,7 @@ const ContactForm = () => {
 
   return (
   
-    <div className="max-w-6xl mx-auto md:py-[30px] py-[0px] px-4 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8 gap-[40px]">
+    <div className="max-w-6xl mx-auto  md:px-[30px] px-[20px] py-[50px]  shadow-newShadow bg-zinc-900 bg-opacity-[0.1] rounded-[20px] flex flex-col md:flex-row justify-between items-start   gap-[60px]">
      
       <div className="flex-1 md:order-first order-last ">
         <form ref={form} onSubmit={handleSubmit} className="space-y-6"> {/* Form is referenced */}
@@ -53,7 +53,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your name"
-            className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3  rounded-md focus:outline-none border-[2px]  border-zinc-700 focus:border-zinc-950"
             required
           />
           <input
@@ -62,7 +62,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="Email"
-            className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3  rounded-md focus:outline-none border-[2px]  border-zinc-700 focus:border-zinc-950"
             required
           />
           <input
@@ -71,7 +71,7 @@ const ContactForm = () => {
             value={formData.website}
             onChange={handleChange}
             placeholder="Your website (If exists)"
-            className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3  rounded-md focus:outline-none border-[2px]  border-zinc-700 focus:border-zinc-950"
           />
           <textarea
             name="message"
@@ -79,7 +79,7 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="How can I help?"
             rows="4"
-            className="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full px-4 py-3  rounded-md focus:outline-none border-[2px]  border-zinc-700 focus:border-zinc-950"
             required
           ></textarea>
           <button
@@ -97,10 +97,10 @@ const ContactForm = () => {
         <h2 className="text-4xl font-bold">
           Let's <span className="text-black">talk</span> for Something special
         </h2>
-        <p className="text-zinc-600">
+        <p className="text-zinc-800">
           I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.
         </p>
-        <div className="text-lg font-semibold">
+        <div className="md:text-lg text-[16px] font-semibold">
           <p>contactrukshanda12@gmail.com</p>
           <p>03367622974</p>
         </div>
@@ -117,7 +117,7 @@ const ContactForm = () => {
           </a>
           <a
             href="https://www.instagram.com/rukshandamahmood/"
-            className="border p-3 rounded-md hover:bg-zinc-100 transition text-[1.5rem]"
+            className="bg-black text-white p-3 rounded-md hover:bg-zinc-800 transition text-[1.5rem]"
             target="_blank"
 
           >
@@ -125,7 +125,7 @@ const ContactForm = () => {
           </a>
           <a
             href="https://x.com/rukshanda10/"
-            className="border p-3 rounded-md hover:bg-zinc-100 transition text-[1.5rem]"
+            className="bg-black text-white p-3 rounded-md hover:bg-zinc-800 transition text-[1.5rem]"
             target="_blank"
 
           >
@@ -133,7 +133,7 @@ const ContactForm = () => {
           </a>
           <a
             href="https://github.com/Rukshanda/"
-            className="border p-3 rounded-md hover:bg-zinc-100 transition text-[1.5rem]"
+            className="bg-black text-white p-3 rounded-md hover:bg-zinc-800 transition text-[1.5rem]"
             target="_blank"
 
           >

@@ -35,7 +35,7 @@ const Skeleton = ({ image }) => (
     {image ? (
       <img
         src={image}
-        alt="Item Image"
+        alt="Blog Image"
         className="w-full h-full object-cover rounded-xl"
       />
     ) : null}

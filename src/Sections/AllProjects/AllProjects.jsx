@@ -1,26 +1,32 @@
-import React from 'react'
-import { project1, project2, project3, project4, project5, project6, readmore } from '../../utils'
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';  
+import 'react-lazy-load-image-component/src/effects/blur.css';  
+import { project1, project2, project3, project4, project5, project6, readmore } from '../../utils';
 
 const ProjectCard = ({ title, description, imageSrc }) => (
-  <div className="allprojects-card bg-black p-[40px] w-full gap-[40px] rounded-2xl text-white flex   flex-col gap-15 items-center transform transition-transform duration-300 hover:scale-105 shadow-3d hover:shadow-2xl">
-    
-    <div className='flex xl:flex-row flex-col gap-[30px]'>
-    <div className="content-cont flex flex-col gap-[15px] xl:w-[50%]">
-      <h3 className="font-bold text-[1.2rem] uppercase">{title}</h3>
+  <div className="allprojects-card w-full bg-black py-[30px] px-[20px] flex-col gap-[40px] rounded-2xl text-white flex gap-15 items-center transform transition-transform duration-300 hover:scale-105 shadow-3d hover:shadow-2xl">
+    <div className="content-cont flex flex-col gap-[15px]">
+      <h3 className="font-bold sm:text-[1.4rem] text-[1.2rem] uppercase">{title}</h3>
       <p className="font-semibold text-zinc-300 text-[1rem]">{description}</p>
-
     </div>
-    <div className="img-cont xl:w-[50%]">
-      <img src={imageSrc} alt={title} className="w-full rounded-md" />
+    <div className="img-cont">
+      {/* Lazy load image */}
+      <LazyLoadImage
+        src={imageSrc}
+        alt={title}
+        className="w-full rounded-md"
+        effect="blur" // Add blur effect while loading
+      />
     </div>
-      </div>
-   
-    <div className='w-full'>
     <button className="w-full flex items-center justify-center gap-2.5 bg-zinc-800 py-2.5 px-5 rounded-lg hover:bg-zinc-900">
-        <img src={readmore} alt="View more" className="w-5 h-5" />
-        <span>View more</span>
-      </button>
-    </div>
+      <LazyLoadImage
+        src={readmore}
+        alt="View more"
+        className="w-5 h-5"
+        effect="blur"
+      />
+      <span>View more</span>
+    </button>
   </div>
 );
 
@@ -32,7 +38,7 @@ export default function AllProjects() {
       imageSrc: project1
     },
     {
-      title: 'FlickFlix ',
+      title: 'FlickFlix',
       description: 'Movie website containing different categories of movies with search functionality. Created using JS, Movie API, and Postman.',
       imageSrc: project2
     },
@@ -62,22 +68,21 @@ export default function AllProjects() {
     <div className="max-w-[1440px] mx-auto">
       <div className="py-20 lg:px-20 sm:px-5 px-5">
         <div className="allprojects">
-        <h1 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center">
-    All <span className="font-extrabold"> Projects</span>
-   </h1>
-          <div className='py-[80px]'>
-          <div className="allprojects-cards grid md:grid-cols-2 sm:grid-cols-1 gap-10">
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                imageSrc={project.imageSrc}
-              />
-            ))}
+          <h1 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center">
+            All <span className="font-extrabold">Projects</span>
+          </h1>
+          <div className="py-[80px]">
+            <div className="allprojects-cards grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-[15px] gap-y-[25px]">
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  imageSrc={project.imageSrc}
+                />
+              ))}
+            </div>
           </div>
-          </div>
-          
         </div>
       </div>
     </div>

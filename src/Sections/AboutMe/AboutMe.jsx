@@ -7,7 +7,7 @@ export default function AboutMe() {
         <div className='py-[80px] lg:px-[80px] sm:px-[20px] px-[20px]'>
            <div className="abouMe flex md:flex-row flex-col justify-between lg:items-start items-center gap-[40px]">
              <div className='md:w-[50%]'>
-                <img src={about} alt="" />
+                <img src={about} alt="about me image" />
              </div>
              <div className='md:w-[50%] flex flex-col gap-[20px]'>
              <h1 className="sm:text-[2.5rem] text-[2.2rem] text-left">

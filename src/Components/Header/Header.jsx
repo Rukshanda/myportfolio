@@ -24,7 +24,7 @@ export default function Header() {
         <div className="py-[24px] flex items-center justify-between lg:px-[80px] px-[20px]">
           <div className="logo">
             <NavLink to="/" className="flex items-center">
-              <img src={logo} alt="Logo" />
+              <img src={logo} alt="Logo" className='max-w-[180px]' />
             </NavLink>
           </div>
 
@@ -70,7 +70,7 @@ export default function Header() {
         >
           <div className="flex justify-between items-center p-[24px]">
             <NavLink to="/" className="flex items-center">
-              <img src={logo} alt="Logo" />
+              <img src={logo} alt="Logo" className='max-w-[180px]'  />
             </NavLink>
             <button onClick={toggleResDropdown} className="text-black text-2xl">
               <FaTimes />

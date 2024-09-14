@@ -1,4 +1,4 @@
-import logoImg from "/assets/Logo.svg" 
+import logoImg from "/assets/logo.png" 
 export const logo = logoImg;
 
 
@@ -43,7 +43,7 @@ export const person1 = person1Img;
 import person2Img from "/assets/person-2.svg"
 export const person2 = person2Img;
 
-import logo2Img from "/assets/logo2.svg"
+import logo2Img from "/assets/logo2.png"
 export const logofooter = logo2Img
 
 import blog1Img from "/assets/blog-1.jpg"
