@@ -29,9 +29,9 @@ export default function Experience() {
       <div className='max-w-[1440px] mx-auto'>
         <div className='py-[80px] lg:px-[80px] sm:px-[20px] px-[20px]'>
           <div className="myExperience">
-            <h1 className="sm:text-[2.5rem] text-[2.2rem] text-white text-center pb-[60px]">
+            <h2 className="sm:text-[2.5rem] text-[2.2rem] text-white text-center pb-[60px]">
               My <span className="font-extrabold">Experience</span>
-            </h1>
+            </h2>
             <div className='flex xl:flex-row flex-col gap-[50px]'>
               {experiences.map((experience, index) => (
                 <div key={index} className='xl:w-[550px] xl:h-[320px] w-[100%] h-[100%] py-[30px] px-[24px] border-zinc-500 border-[2px] flex flex-col gap-[15px] rounded-[8px] hover:bg-zinc-800 hover:border-zinc-800 cursor-default transition-colors ease-in-out'>

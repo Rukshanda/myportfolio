@@ -31,16 +31,16 @@ export default function Testimonial() {
   return (
     <div className="max-w-[1440px] mx-auto">
       <div className="py-[80px] lg:px-[80px] sm:px-[20px] px-[20px]">
-        <h1 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center pb-[60px] rounded-[20px] p-[40px]">
+        <h2 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center pb-[60px] rounded-[20px] p-[40px]">
         What They  <span className="font-extrabold">Say</span>
-        </h1>
+        </h2>
         <Swiper
           modules={[Navigation, Autoplay]}
           navigation
           spaceBetween={60}
           className='md:p-[50px] py-[20px]'
           speed={1200}
-          autoplay={{ delay: 2000 }}
+          autoplay={{ delay: 3000 }}
           
           loop={true}
           breakpoints={{

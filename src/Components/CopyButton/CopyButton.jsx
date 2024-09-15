@@ -32,7 +32,7 @@ const CopyEmailButton = ({ email }) => {
         
       "
     >
-      <span className="mr-2">Get Email</span>
+      <span className="mr-2">Copy Email</span>
       <FaCopy />
     </button>
   );

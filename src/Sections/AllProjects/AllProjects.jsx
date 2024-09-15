@@ -1,34 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';  
 import 'react-lazy-load-image-component/src/effects/blur.css';  
 import { project1, project2, project3, project4, project5, project6, readmore } from '../../utils';
+import { FaSpinner } from 'react-icons/fa'; // Import a spinner icon
 
-const ProjectCard = ({ title, description, imageSrc }) => (
-  <div className="allprojects-card w-full bg-black py-[30px] px-[20px] flex-col gap-[40px] rounded-2xl text-white flex gap-15 items-center transform transition-transform duration-300 hover:scale-105 shadow-3d hover:shadow-2xl">
-    <div className="content-cont flex flex-col gap-[15px]">
-      <h3 className="font-bold sm:text-[1.4rem] text-[1.2rem] uppercase">{title}</h3>
-      <p className="font-semibold text-zinc-300 text-[1rem]">{description}</p>
+const ProjectCard = ({ title, description, imageSrc }) => {
+  const [isLoading, setIsLoading] = useState(true); // State to manage image loading status
+
+  return (
+    <div className="allprojects-card w-full bg-black py-[30px] px-[20px] flex-col gap-[40px] rounded-2xl text-white flex gap-15 items-center transform transition-transform duration-300 hover:scale-105 shadow-3d hover:shadow-2xl">
+      <div className="content-cont flex flex-col gap-[15px]">
+        <h3 className="font-bold sm:text-[1.4rem] text-[1.2rem] uppercase">{title}</h3>
+        <p className="font-semibold text-zinc-300 text-[1rem]">{description}</p>
+      </div>
+      <div className="img-cont relative">
+        {/* Show loader while image is loading */}
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <FaSpinner className="animate-spin text-white text-2xl" />
+          </div>
+        )}
+        <LazyLoadImage
+          src={imageSrc}
+          alt={title}
+          className="w-full rounded-md"
+          effect="blur"
+          afterLoad={() => setIsLoading(false)} // Hide loader after image loads
+        />
+      </div>
+      <button className="w-full flex items-center justify-center gap-2.5 bg-zinc-800 py-2.5 px-5 rounded-lg hover:bg-zinc-900">
+        <LazyLoadImage
+          src={readmore}
+          alt="View more"
+          className="w-5 h-5"
+          effect="blur"
+        />
+        <span>View more</span>
+      </button>
     </div>
-    <div className="img-cont">
-      {/* Lazy load image */}
-      <LazyLoadImage
-        src={imageSrc}
-        alt={title}
-        className="w-full rounded-md"
-        effect="blur" // Add blur effect while loading
-      />
-    </div>
-    <button className="w-full flex items-center justify-center gap-2.5 bg-zinc-800 py-2.5 px-5 rounded-lg hover:bg-zinc-900">
-      <LazyLoadImage
-        src={readmore}
-        alt="View more"
-        className="w-5 h-5"
-        effect="blur"
-      />
-      <span>View more</span>
-    </button>
-  </div>
-);
+  );
+};
 
 export default function AllProjects() {
   const projects = [

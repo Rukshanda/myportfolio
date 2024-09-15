@@ -102,7 +102,7 @@ const ContactForm = () => {
         </p>
         <div className="md:text-lg text-[16px] font-semibold">
           <p>contactrukshanda12@gmail.com</p>
-          <p>03367622974</p>
+          <p>+92 367622974</p>
         </div>
 
         {/* Social Icons */}
