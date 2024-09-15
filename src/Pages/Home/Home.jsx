@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
    <Helmet>
-        <title>HomePage-Rukshanda</title>
+        <title>Home-Rukshanda Web Developer</title>
         <meta name="description" content="This is Home Page of Portfolio." />
         <meta name="robots" content="index, follow" />
         <meta name="keywords" content="Portfolio, Web Development, Frontend Development, JavaScript , React JS  " />

@@ -7,7 +7,7 @@ export default function ContactPage() {
     <>
     
     <Helmet>
-        <title>ContactPage-Rukshanda</title>
+        <title>Contact-Rukshanda Web Developer</title>
         <meta name="description" content="This is Contact Page of Portfolio." />
         <meta name="robots" content="index, follow" />
         <meta name="keywords" content="Portfolio, Web Development, Frontend Development, JavaScript , React JS  " />
