@@ -30,9 +30,9 @@ const ProgressCircles = () => {
  <div className="max-w-[1440px] mx-auto z-[1000]">
     
         <div className="py-[120px] md:px-[80px] px-[20px] ">
-        <h1 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center pb-[60px]">
+        <h2 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center pb-[60px]">
               My <span className="font-extrabold">Skills</span>
-            </h1>
+            </h2>
           <div className='flex justify-center'>
           <div className="circlecontainer">
       <div

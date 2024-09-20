@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';  
-import 'react-lazy-load-image-component/src/effects/blur.css';   
-import { project1, project2, project3, readmore } from '../../utils';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { project1, project2, project3, readmore } from '../../utils';  // Assuming readmore is renamed to readmore
+import Spinner from '../../Components/Spinner/Spinner';
 
-// Simple loading spinner component
-const Spinner = () => (
-  <div className="flex justify-center items-center">
-    <div className="w-10 h-10 border-4 border-blue-500 border-dotted rounded-full animate-spin"></div>
-  </div>
-);
 
 export default function Projects() {
   return (
@@ -33,13 +28,9 @@ export default function Projects() {
                   <h2 className='font-extrabold text-white lg:text-[3rem] sm:text-[2.5rem] text-[2rem]'>01</h2>
                   <h3 className='font-bold text-white lg:text-[2rem] md:text-[1.8rem] text-[1.5rem]'>Cafe E-commerce Website</h3>
                   <p className='text-zinc-500 text-[1.1rem]'>E-commerce site contains Profile Page, Cart Page, and Blogs Page. Dynamic website with responsive design. Created using React JS, Tailwind CSS, and Supabase.</p>
-                  <LazyLoadImage
-                    src={readmore}
-                    alt="readmore img"
-                    className='w-[20px] h-[20px]'
-                    effect="blur"
-                  />
-                </div>
+                  
+                  {/* Adding inline SVG */}
+                  {readmore}                </div>
               </div>
 
               {/* Project 2 */}
@@ -55,13 +46,10 @@ export default function Projects() {
                     <h2 className='font-extrabold text-white lg:text-[3rem] sm:text-[2.5rem] text-[2rem]'>02</h2>
                     <h3 className='font-bold text-white lg:text-[2rem] md:text-[1.8rem] text-[1.5rem]'>FlickFlix Movie Website</h3>
                     <p className='text-zinc-500 text-[1.1rem]'>Movie website contains different categories of movies with search functionality. Created using JS, Movie API, and Postman.</p>
-                    <LazyLoadImage
-                      src={readmore}
-                      alt="readmore"
-                      className='w-[20px] h-[20px]'
-                      effect="blur"
-                    />
-                  </div>
+                    
+                    {/* Adding inline SVG */}
+                      {readmore}
+                   </div>
                 </div>
               </div>
 
@@ -77,13 +65,9 @@ export default function Projects() {
                   <h2 className='font-extrabold text-white lg:text-[3rem] sm:text-[2.5rem] text-[2rem]'>03</h2>
                   <h3 className='font-bold text-white lg:text-[2rem] md:text-[1.8rem] text-[1.5rem]'>PayPal Business Website</h3>
                   <p className='text-zinc-500 text-[1.1rem]'>Business website consisting of 24 pages. Dynamic website with responsive design. Created using HTML, CSS, and JS.</p>
-                  <LazyLoadImage
-                    src={readmore}
-                    alt="readmore"
-                    className='w-[20px] h-[20px]'
-                    effect="blur"
-                  />
-                </div>
+                  
+                  {/* Adding inline SVG */}
+                  {readmore}                </div>
               </div>
             </div>
           </div>
@@ -93,7 +77,6 @@ export default function Projects() {
   );
 }
 
-// Component to handle image loading and display spinner
 const ImageWithLoader = ({ src, alt }) => {
   const [loading, setLoading] = useState(true);
 
@@ -109,8 +92,8 @@ const ImageWithLoader = ({ src, alt }) => {
         alt={alt}
         className="w-full h-full object-cover rounded-[20px]"
         effect="blur"
-        beforeLoad={() => setLoading(true)} // Show loader before image loads
-        afterLoad={() => setLoading(false)} // Hide loader after image has loaded
+        beforeLoad={() => setLoading(true)}
+        afterLoad={() => setLoading(false)}
       />
     </div>
   );

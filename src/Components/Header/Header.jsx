@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'; // Import NavLink
-import { FaRegUser, FaTimes, FaUserPlus ,   } from 'react-icons/fa';
-import { FaBarsStaggered, FaPerson } from 'react-icons/fa6';
-import { bar, logo } from '../../utils'; // Ensure correct paths
+import { FaCloudDownloadAlt, FaFileDownload, FaRegUser, FaTimes, FaUserPlus ,   } from 'react-icons/fa';
+import { FaBarsStaggered, FaDownload, FaPerson } from 'react-icons/fa6';
+import { logo } from '../../utils'; // Ensure correct paths
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -12,10 +12,11 @@ export default function Header() {
   };
 
   const navItems = [
-    { title: "About", path: "/about" },
+
      { title: "Projects", path: "/projects" },
     { title: "Blogs", path: "/blogs" },
     { title: "Contact", path: "/contact" },
+    { title: "About", path: "/about" },
   ];
 
   return (
@@ -23,9 +24,9 @@ export default function Header() {
       <header className="max-w-[1440px] mx-auto">
         <div className="py-[24px] flex items-center justify-between lg:px-[80px] px-[20px]">
           <div className="logo">
-            <NavLink to="/" className="flex items-center">
-              <img src={logo} alt="Logo" className='max-w-[180px]' />
-            </NavLink>
+          <a href="https://rukshandadev.netlify.app/" className="flex items-center">
+              <img src={logo} alt="Logo" className='max-w-[180px]'  />
+            </a>
           </div>
 
           <nav className="hidden md:!flex lg:gap-[32px] gap-[25px]">
@@ -41,13 +42,15 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:!block">
-          <button className=" flex items-center gap-[10px] bg-black px-[20px] py-[10px] text-white rounded-[8px] hover:bg-white border-black  hover:border-black border-[2px] hover:text-black transition-colors duration-400 ease-in-out">
-          <span>Resume</span>
-              <span>
-                <FaRegUser />
-              </span>
-            </button>
-          </div>
+  <button
+    onClick={() => window.open('/resume.pdf', '_blank')}
+    className="flex items-center gap-[10px] bg-black px-[20px] py-[10px] text-white rounded-[8px] hover:bg-white border-black hover:border-black border-[2px] hover:text-black transition-colors duration-400 ease-in-out"
+  >
+    <span>Resume</span>
+    <FaDownload/>
+  </button>
+</div>
+
 
           <button
             onClick={toggleResDropdown}
@@ -69,9 +72,9 @@ export default function Header() {
           } fixed top-0 left-0 w-full h-full bg-white transform transition-transform duration-500 ease-in-out z-50 lg:hidden`}
         >
           <div className="flex justify-between items-center p-[24px]">
-            <NavLink to="/" className="flex items-center">
+            <a href="https://rukshandadev.netlify.app/" className="flex items-center">
               <img src={logo} alt="Logo" className='max-w-[180px]'  />
-            </NavLink>
+            </a>
             <button onClick={toggleResDropdown} className="text-black text-2xl">
               <FaTimes />
             </button>

@@ -12,6 +12,7 @@
   "dependencies": {
     "@devnomic/marquee": "^1.0.2",
     "@fortawesome/fontawesome-free": "^6.6.0",
+    "@steveeeie/react-page-transition": "^1.3.0",
     "@tabler/icons-react": "^3.16.0",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
@@ -22,7 +23,10 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.3.0",
     "react-lazy-load-image-component": "^1.6.2",
-    "react-router-dom": "^6.26.1",
+    "react-router": "^6.26.2",
+    "react-router-dom": "^6.26.2",
+    "react-transition-group": "^4.4.5",
+    "styled-components": "^6.1.13",
     "swiper": "^11.1.12",
     "tailwind-merge": "^2.5.2"
   },

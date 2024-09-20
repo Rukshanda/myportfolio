@@ -1,0 +1,13 @@
+# Allow all web crawlers to access the entire site
+User-agent: *
+Allow: /
+
+# Block the following directories
+Disallow: /node_modules/
+Disallow: /build/
+Disallow: /dist/
+Disallow: /static/
+
+
+# Sitemap location (replace with your actual sitemap URL)
+Sitemap: https://rukshandadev.netlify.app/sitemap.xml

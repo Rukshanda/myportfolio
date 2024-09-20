@@ -1,14 +1,14 @@
 import React from 'react'
 import { about } from '../../utils'
-
+ 
 export default function AboutMe() {
   return (
     <div className='max-w-[1440px] mx-auto'>
         <div className='py-[80px] lg:px-[80px] sm:px-[20px] px-[20px]'>
            <div className="abouMe flex md:flex-row flex-col justify-between lg:items-start items-center gap-[40px]">
              <div className='md:w-[50%]'>
-                <img src={about} alt="about me image" />
-             </div>
+              <img src={about} alt="" />
+              </div>
              <div className='md:w-[50%] flex flex-col gap-[20px]'>
              <h1 className="sm:text-[2.5rem] text-[2.2rem] text-left">
             About <span className="font-extrabold">Me</span>

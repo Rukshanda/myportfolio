@@ -3,29 +3,29 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import About from "./Pages/About/About";
- 
-import Home from "./Pages/Home/Home"; // Assuming you have a Home page
+import Home from "./Pages/Home/Home";
 import ProjectsPage from './Pages/ProjectsPage/ProjectsPage';
 import Blogspage from './Pages/BlogsPage/Blogspage';
 import ContactPage from './Pages/ContactPage/ContactPage';
-
+import ScrollToTop from './Components/ScrollTop/ScrollTop';
+import NotFoundPage from './Pages/NotFoundPage/NotFoundPage';
+ 
 function App() {
   return (
     <Router>
-      <Header />
+      <ScrollToTop/>
+  
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/blogs" element={<Blogspage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFoundPage />} />  
 
-        {/* <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/contact" element={<Contact />} /> */}
       </Routes>
-      <Footer />
+     
     </Router>
   );
 }

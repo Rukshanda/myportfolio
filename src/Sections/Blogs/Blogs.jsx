@@ -1,60 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { BentoGrid, BentoGridItem } from "../../Components/ui/bentogrid";
 import { blog1, blog2, blog3, blog4, blog5 } from "../../utils";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css"; // Optional for blur effect
+import Spinner from "../../Components/Spinner/Spinner";
 
-export default function BentoGridDemo() {
-  return (
-    <div className="py-20">
- <h1 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center pb-[60px]">
-    My <span className="font-extrabold"> Blogs</span>
-   </h1>
-    <BentoGrid className="max-w-6xl mx-auto">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={
-            <div>
-              <p>{item.description}</p>
-              <ReadMoreLink url={item.url} /> {/* Adding link inside description */}
-            </div>
-          }
-          header={<Skeleton image={item.image} />}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-        />
-      ))}
-    </BentoGrid>
-    </div>
-   
-  );
-}
-
-// Updated Skeleton component to accept an image prop
-const Skeleton = ({ image }) => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
-    {image ? (
-      <img
-        src={image}
-        alt="Blog Image"
-        className="w-full h-full object-cover rounded-xl"
-      />
-    ) : null}
-  </div>
-);
-
-// "Read More" Link Component
-const ReadMoreLink = ({ url }) => (
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-zinc-200 hover:underline mt-2 block font-bold underline"
-  >
-    Read More
-  </a>
-);
-
-// Updated items array to include image URLs and article URLs
 const items = [
   {
     title: "5 Coding Mistakes I Wish I Knew When I Started Coding",
@@ -87,3 +37,66 @@ const items = [
     url: "#",
   },
 ];
+
+ 
+
+const Skeleton = ({ image }) => {
+  const [loading, setLoading] = useState(true);
+
+  return (
+    <div className="relative w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 overflow-hidden">
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <Spinner />
+        </div>
+      )}
+      {image && (
+        <LazyLoadImage
+          src={image}
+          alt="Blog Image"
+          className="w-full h-full object-cover"
+          effect="blur"
+          beforeLoad={() => setLoading(true)}
+          afterLoad={() => setLoading(false)}
+        />
+      )}
+    </div>
+  );
+};
+
+const ReadMoreLink = ({ url }) => (
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-zinc-200 hover:underline mt-2 block font-bold underline"
+  >
+    Read More
+  </a>
+);
+
+export default function BentoGridDemo() {
+  return (
+    <div className="py-20">
+      <h1 className="sm:text-[2.5rem] text-[2.2rem] text-black text-center pb-[60px]">
+        My <span className="font-extrabold"> Blogs</span>
+      </h1>
+      <BentoGrid className="max-w-6xl mx-auto">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={
+              <div>
+                <p>{item.description}</p>
+                <ReadMoreLink url={item.url} />
+              </div>
+            }
+            header={<Skeleton image={item.image} />}
+            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+           />
+        ))}
+      </BentoGrid>
+    </div>
+  );
+}

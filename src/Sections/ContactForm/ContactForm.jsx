@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedin, FaPhone } from 'react-icons/fa';
 import { FaGithub, FaXTwitter } from 'react-icons/fa6';
 import emailjs from 'emailjs-com';
 
@@ -101,8 +101,13 @@ const ContactForm = () => {
           I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.
         </p>
         <div className="md:text-lg text-[16px] font-semibold">
-          <p>contactrukshanda12@gmail.com</p>
-          <p>+92 367622974</p>
+          <p className='flex gap-[5px] items-center' > <FaEnvelope /> contactrukshanda12@gmail.com</p>
+          <a
+    href="https://wa.me/923367622974" // Your phone number in international format
+    className='flex gap-[5px] items-center hover:text-[#25D366]'
+    target="_blank" // Opens in a new tab
+    rel="noopener noreferrer"
+  ><FaPhone /> +92 3367622974</a>
         </div>
 
         {/* Social Icons */}

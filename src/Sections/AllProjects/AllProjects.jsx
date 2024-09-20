@@ -3,6 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';  
 import { project1, project2, project3, project4, project5, project6, readmore } from '../../utils';
 import { FaSpinner } from 'react-icons/fa'; // Import a spinner icon
+import Spinner from '../../Components/Spinner/Spinner';
 
 const ProjectCard = ({ title, description, imageSrc }) => {
   const [isLoading, setIsLoading] = useState(true); // State to manage image loading status
@@ -16,9 +17,7 @@ const ProjectCard = ({ title, description, imageSrc }) => {
       <div className="img-cont relative">
         {/* Show loader while image is loading */}
         {isLoading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <FaSpinner className="animate-spin text-white text-2xl" />
-          </div>
+           <Spinner/>
         )}
         <LazyLoadImage
           src={imageSrc}

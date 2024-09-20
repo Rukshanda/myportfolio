@@ -29,6 +29,7 @@ const CopyEmailButton = ({ email }) => {
         hover:bg-black
         hover:text-white
         justify-center
+        transition-colors duration-400 ease-in-out
         
       "
     >
